@@ -1,0 +1,78 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// App.jsx
+import React from "react";
+import Navbar from "./Components/Navbar";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Projects from "./Pages/Projects";
+import Experience from "./Pages/Experience";
+import Resume from "./Pages/Resume";
+import { motion } from "framer-motion";
+
+function App() {
+  return (
+    <div className="bg-transparent">   {/* ✅ transparent wrapper so gradient shows */}
+      <div className="App">
+        <Navbar />
+
+        {/* Each Section */}
+        <section id="home" className="section">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Home />
+          </motion.div>
+        </section>
+
+        <section id="about" className="section">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <About />
+          </motion.div>
+        </section>
+
+        <section id="projects" className="section">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Projects />
+          </motion.div>
+        </section>
+
+        <section id="experience" className="section">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Experience />
+          </motion.div>
+        </section>
+
+        <section id="resume" className="section">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Resume />
+          </motion.div>
+        </section>
+      </div>
+    </div>
+  );
+}
+
+export default App;
