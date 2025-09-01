@@ -1,4 +1,3 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // App.jsx
 import React from "react";
 import Navbar from "./Components/Navbar";
@@ -11,7 +10,7 @@ import { motion } from "framer-motion";
 
 function App() {
   return (
-    <div className="bg-transparent">   {/* ✅ transparent wrapper so gradient shows */}
+    <div className="bg-transparent"> {/* ✅ transparent wrapper so gradient shows */}
       <div className="App">
         <Navbar />
 

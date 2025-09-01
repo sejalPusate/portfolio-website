@@ -15,9 +15,10 @@ export default function Navbar() {
     <nav className="bg-white/10 backdrop-blur-md border-b border-white/20 text-white px-8 py-6 shadow-md sticky top-0 z-50">
       <div className="flex items-center justify-between">
         {/* Logo on Left */}
-        <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-12 w-12 object-contain" />
+        <div className="w-12 h-12 bg-white flex items-center justify-center rounded">
+          <img src={logo} alt="Logo" className="w-10 h-10 object-contain" />
         </div>
+
 
         {/* Navbar Links in Center/Right */}
         <ul className="flex justify-center space-x-10">

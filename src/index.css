@@ -4,7 +4,7 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(to bottom right, #10002B, #240046);
+    background: linear-gradient(to bottom right, #090017, #240046);
     background-attachment: fixed; /* keeps gradient fixed while scrolling */
     background-size: cover;
     color: white; /* optional: makes text visible */

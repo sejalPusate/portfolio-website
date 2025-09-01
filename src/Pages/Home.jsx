@@ -133,12 +133,17 @@ const Home = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <button className="group relative px-6 py-3 bg-white text-black font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl overflow-hidden">
+                <a 
+                  href="https://www.linkedin.com/in/sejalpusate/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group relative px-6 py-3 bg-white text-black font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl overflow-hidden inline-flex items-center justify-center"
+                >
                   <div className="relative flex items-center gap-2 justify-center">
                     Let's Connect
                     <ExternalLink size={18} className="transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                </button>
+                </a>
                 
                 <div className="flex items-center gap-2">
                   <button className="group px-6 py-3 border border-gray-600 rounded-full text-gray-300 font-semibold backdrop-blur-sm bg-white/5 transition-all duration-300 hover:bg-white/10 hover:border-gray-500">
