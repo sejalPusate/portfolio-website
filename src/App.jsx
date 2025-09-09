@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 import Experience from "./Pages/Experience";
-import Resume from "./Pages/Resume";
+import Contact from "./Pages/Contact";
 import { motion } from "framer-motion";
 
 function App() {
@@ -59,16 +59,17 @@ function App() {
           </motion.div>
         </section>
 
-        <section id="resume" className="section">
+        <section id="contact" className="section">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Resume />
+            <Contact />
           </motion.div>
         </section>
+        
       </div>
     </div>
   );

@@ -7,12 +7,11 @@ export default function Navbar() {
     { name: "About", path: "#about" },
     { name: "Projects", path: "#projects" },
     { name: "Experience", path: "#experience" },
-    { name: "Resume", path: "#resume" },
     { name: "Contact Me", path: "#contact" },
   ];
 
   return (
-    <nav className="bg-white/10 backdrop-blur-md border-b border-white/20 text-white px-8 py-6 shadow-md sticky top-0 z-50">
+    <nav className="bg-white/10 backdrop-blur-md border-b border-white/20 text-white px-8 py-0.5 shadow-md sticky top-0 z-50">
       <div className="flex items-center justify-between">
         {/* Logo on Left */}
         <div className="w-12 h-12 bg-white flex items-center justify-center rounded">
