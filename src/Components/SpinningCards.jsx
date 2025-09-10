@@ -56,7 +56,7 @@ export default function RotatingCards() {
         return (
           <motion.div
             key={card.id}
-            className="absolute top-0 left-0 w-[300px] h-[380px] bg-white shadow-xl rounded-2xl flex flex-col items-center justify-between overflow-hidden"
+            className="absolute top-0 left-0 w-[220px] h-[300px] bg-white shadow-xl rounded-2xl flex flex-col items-center justify-between overflow-hidden"
             style={{ transformStyle: "preserve-3d" }}
             animate={{ x, z, opacity, scale }}
             transition={{ duration: 0.8 }}
@@ -66,7 +66,7 @@ export default function RotatingCards() {
               <img
                 src={card.image}
                 alt={card.title}
-                className="w-[300px] h-[300px] object-cover rounded-xl"
+                className="w-[300px] h-[260px] object-cover rounded-xl"
               />
             </div>
 

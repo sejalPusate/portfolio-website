@@ -103,7 +103,7 @@ const Home = () => {
             }`}>
 
               {/* Main Headline */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight">
                 <span className="text-white">I help founders turn ideas into seamless </span>
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent italic font-light">
                   digital experiences
@@ -200,7 +200,7 @@ const Home = () => {
             }`}>
               <div className="relative">
                 {/* Main Portrait Container */}
-                <div className="w-80 h-96 lg:w-96 lg:h-[500px] rounded-2xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-white/10 overflow-hidden">
+                <div className="w-80 h-96 lg:w-96 lg:h-[400px] rounded-2xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-white/10 overflow-hidden">
                   {/* Placeholder for actual image */}
                   <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
                     <div className="text-center">

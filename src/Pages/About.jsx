@@ -16,7 +16,7 @@ export default function AboutPage() {
           {/* Left Content */}
           <div className="space-y-8">
             <div>
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-4">
+              <h1 className="text-2xl lg:text-4xl font-bold leading-tight mb-4">
                 I'm Sejal, a <br />
                 creative <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent italic font-light">
                   engineer
@@ -24,7 +24,7 @@ export default function AboutPage() {
               </h1>
             </div>
 
-            <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
+            <div className="space-y-6 text-gray-300 text-base leading-relaxed">
               <p>
                 I'm Sejal Pusate, a final-year Computer Science student passionate about building impactful projects and solving problems with clean, efficient code. I’m career-driven, adaptable, and always open to global opportunities that help me grow and contribute meaningfully.
               </p>
