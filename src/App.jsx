@@ -6,11 +6,15 @@ import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 import Experience from "./Pages/Experience";
 import Contact from "./Pages/Contact";
+import MouseFollower from "./Components/MouseFollower"; // MouseFollower
 import { motion } from "framer-motion";
 
 function App() {
   return (
-    <div className="bg-transparent"> {/* ✅ transparent wrapper so gradient shows */}
+    <div className="relative bg-transparent">
+      {/*  Mouse Follower — will stay on top of everything */}
+      <MouseFollower />
+
       <div className="App">
         <Navbar />
 
@@ -69,7 +73,6 @@ function App() {
             <Contact />
           </motion.div>
         </section>
-        
       </div>
     </div>
   );

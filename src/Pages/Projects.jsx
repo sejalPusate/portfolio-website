@@ -147,43 +147,43 @@ export default function Projects() {
 
         {/* Tech Stack Section */}
         {activeTab === "techstack" && (
-            <section className="text-center">
-              <h2 className="text-3xl font-bold text-purple-400 mb-6">
-                Tech Stack
-              </h2>
+          <section className="text-center">
+            <h2 className="text-3xl font-bold text-purple-400 mb-6">
+              Tech Stack
+            </h2>
+
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 justify-items-center">
+              <FaReact size={50} className="text-blue-400 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]" title="React" />
+              <FaNodeJs size={50} className="text-green-500 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(34,197,94,0.8)]" title="Node.js" />
+              <SiExpress size={50} className="text-gray-400 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(156,163,175,0.8)]" title="Express" />
+              <SiMongodb size={50} className="text-green-600 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(22,163,74,0.8)]" title="MongoDB" />
+              <FaHtml5 size={50} className="text-orange-500 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)]" title="HTML5" />
+              <FaCss3Alt size={50} className="text-blue-500 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]" title="CSS3" />
+              <FaJs size={50} className="text-yellow-400 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(250,204,21,0.8)]" title="JavaScript" />
+              <SiTailwindcss size={50} className="text-cyan-400 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]" title="Tailwind CSS" />
+              <FaGitAlt size={50} className="text-red-500 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]" title="Git" />
               
+              {/* Extended Tech */}
+              <SiPostman size={50} className="text-orange-400 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(251,146,60,0.8)]" title="Postman" />
+              <SiPhp size={50} className="text-indigo-500 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.8)]" title="PHP" />
+              <SiWordpress size={50} className="text-blue-400 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]" title="WordPress" />
+              <SiAndroidstudio size={50} className="text-green-500 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(34,197,94,0.8)]" title="Android Studio" />
+              <FaJava size={50} className="text-red-600 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(220,38,38,0.8)]" title="Java" />
+              <FaPython size={50} className="text-yellow-400 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(250,204,21,0.8)]" title="Python" />
+              <SiOpencv size={50} className="text-green-400 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(74,222,128,0.8)]" title="OpenCV" />
+              <SiScikitlearn size={50} className="text-orange-500 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)]" title="Scikit-learn" />
 
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 justify-items-center">
-                <FaReact size={50} className="text-blue-400 hover:scale-110 transition-transform" title="React" />
-                <FaNodeJs size={50} className="text-green-500 hover:scale-110 transition-transform" title="Node.js" />
-                <SiExpress size={50} className="text-gray-400 hover:scale-110 transition-transform" title="Express" />
-                <SiMongodb size={50} className="text-green-600 hover:scale-110 transition-transform" title="MongoDB" />
-                <FaHtml5 size={50} className="text-orange-500 hover:scale-110 transition-transform" title="HTML5" />
-                <FaCss3Alt size={50} className="text-blue-500 hover:scale-110 transition-transform" title="CSS3" />
-                <FaJs size={50} className="text-yellow-400 hover:scale-110 transition-transform" title="JavaScript" />
-                <SiTailwindcss size={50} className="text-cyan-400 hover:scale-110 transition-transform" title="Tailwind CSS" />
-                <FaGitAlt size={50} className="text-red-500 hover:scale-110 transition-transform" title="Git" />
-                {/* Extended Tech */}
-                <SiPostman size={50} className="text-orange-400 hover:scale-110 transition-transform" title="Postman" />
-                <SiPhp size={50} className="text-indigo-500 hover:scale-110 transition-transform" title="PHP" />
-                <SiWordpress size={50} className="text-blue-400 hover:scale-110 transition-transform" title="WordPress" />
-                <SiAndroidstudio size={50} className="text-green-500 hover:scale-110 transition-transform" title="Android Studio" />
-                <FaJava size={50} className="text-red-600 hover:scale-110 transition-transform" title="Java" />
-                <FaPython size={50} className="text-yellow-400 hover:scale-110 transition-transform" title="Python" />
-                <SiOpencv size={50} className="text-green-400 hover:scale-110 transition-transform" title="OpenCV" />
-                <SiScikitlearn size={50} className="text-orange-500 hover:scale-110 transition-transform" title="Scikit-learn" />
+              {/* APIs / AI */}
+              <SiOpenai size={50} className="text-purple-400 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(192,132,252,0.8)]" title="OpenAI API" />
+              <SiHuggingface size={50} className="text-yellow-500 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(234,179,8,0.8)]" title="Hugging Face" />
 
-                {/* APIs / AI */}
-                <SiOpenai size={50} className="text-purple-400 hover:scale-110 transition-transform" title="OpenAI API" />
-                <SiHuggingface size={50} className="text-yellow-500 hover:scale-110 transition-transform" title="Hugging Face" />
-
-                {/* UI & Tools */}
-                <SiReactrouter size={50} className="text-pink-400 hover:scale-110 transition-transform" title="React Router" />
-                <SiFramer size={50} className="text-pink-500 hover:scale-110 transition-transform" title="Framer Motion" />
-                <SiFigma size={50} className="text-purple-500 hover:scale-110 transition-transform" title="Figma" />
-              </div>
-            </section>
-          )}
+              {/* UI & Tools */}
+              <SiReactrouter size={50} className="text-pink-400 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(244,114,182,0.8)]" title="React Router" />
+              <SiFramer size={50} className="text-pink-500 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(236,72,153,0.8)]" title="Framer Motion" />
+              <SiFigma size={50} className="text-purple-500 hover:scale-110 transition-transform hover:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]" title="Figma" />
+            </div>
+          </section>
+        )}
 
       </main>
     </div>

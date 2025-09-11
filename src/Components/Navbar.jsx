@@ -1,7 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   const navItems = [
     { name: "Home", path: "#home" },
     { name: "About", path: "#about" },
@@ -10,16 +13,38 @@ export default function Navbar() {
     { name: "Contact Me", path: "#contact" },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 50) {
+        // Always show navbar when near the top
+        setIsVisible(true);
+      } else if (window.scrollY > lastScrollY) {
+        // Scrolling down → hide navbar
+        setIsVisible(false);
+      } else {
+        // Scrolling up → show navbar
+        setIsVisible(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <nav className="bg-white/10 backdrop-blur-md border-b border-white/20 text-white px-8 py-0.5 shadow-md sticky top-0 z-50">
+    <nav
+      className={`bg-white/10 backdrop-blur-md border-b border-white/20 text-white px-8 py-0.5 shadow-md fixed top-0 w-full z-50 transition-transform duration-300 ${
+        isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+      }`}
+    >
       <div className="flex items-center justify-between">
-        {/* Logo on Left */}
+        {/* Logo */}
         <div className="w-12 h-12 bg-white flex items-center justify-center rounded">
           <img src={logo} alt="Logo" className="w-10 h-10 object-contain" />
         </div>
 
-
-        {/* Navbar Links in Center/Right */}
+        {/* Nav Links */}
         <ul className="flex justify-center space-x-10">
           {navItems.map((item) => (
             <li key={item.name} className="relative group">

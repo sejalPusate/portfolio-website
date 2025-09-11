@@ -39,7 +39,7 @@ export default function AboutPage() {
             </div>
 
             {/* Social Links */}
-              <div className="flex space-x-4 pt-4">
+              <div className="flex space-x-4 ">
                 <a 
                   href="https://www.linkedin.com/in/sejalpusate/" 
                   target="_blank" 
