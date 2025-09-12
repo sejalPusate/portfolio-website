@@ -21,7 +21,7 @@ const ContactPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0a0015] via-[#1a0b2e] to-[#16213e] relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
       {/* Enhanced animated background elements */}
       <div className="absolute inset-0 opacity-40">
         {/* Floating particles */}

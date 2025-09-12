@@ -240,7 +240,7 @@ const Home = () => {
       </div>
 
       {/* Glassmorphism overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 via-transparent to-transparent pointer-events-none"></div>
     </div>
   );
 };

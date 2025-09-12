@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 function App() {
   return (
-    <div className="relative bg-transparent">
+    <div className="min-h-screen bg-gradient-to-br from-[#090017] to-[#240046]">
       {/*  Mouse Follower — will stay on top of everything */}
       <MouseFollower />
 
