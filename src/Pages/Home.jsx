@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Download, ExternalLink, Github, Linkedin, Mail, Copy, Check } from 'lucide-react';
+import { motion } from "framer-motion";
+import myPortrait from "../assets/portrait.png";
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -104,11 +106,17 @@ const Home = () => {
 
               {/* Main Headline */}
               <h1 className="text-4xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight">
-                <span className="text-white">I help founders turn ideas into seamless </span>
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent italic font-light">
+                {/* Normal text switches between black (light mode) and white (dark mode) */}
+                <span className="text-black dark:text-white">
+                  I help founders turn ideas into seamless{" "}
+                </span>
+
+                {/* Gradient text stays vibrant in both themes, but slightly adjusted for dark mode */}
+                <span className="bg-gradient-to-r from-purple-700 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent italic font-light">
                   digital experiences
                 </span>
               </h1>
+
 
               {/* Introduction */}
               <div className="flex items-center gap-3 mb-12">
@@ -177,9 +185,9 @@ const Home = () => {
               {/* Social Links */}
               <div className="flex gap-4">
                 {[
-                  { icon: Github, href: "#", label: "GitHub" },
-                  { icon: Linkedin, href: "#", label: "LinkedIn" }, 
-                  { icon: Mail, href: "#", label: "Email" }
+                  { icon: Github, href: "https://github.com/sejalPusate", label: "GitHub" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/sejalpusate/", label: "LinkedIn" }, 
+                  { icon: Mail, href: "mailto:sejalpusate@gmail.com", label: "Email" }
                 ].map(({ icon: Icon, href, label }, index) => (
                   <a
                     key={label}
@@ -195,46 +203,54 @@ const Home = () => {
             </div>
 
             {/* Right Side - Portrait Image */}
-            <div className={`lg:flex justify-center items-center transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-            }`}>
+            <motion.div
+              initial={{ opacity: 0, x: 50, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+              className="lg:flex justify-center items-center"
+            >
               <div className="relative">
-                {/* Main Portrait Container */}
-                <div className="w-80 h-96 lg:w-96 lg:h-[400px] rounded-2xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-white/10 overflow-hidden">
-                  {/* Placeholder for actual image */}
-                  <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-24 h-24 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-4 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-white">AB</span>
-                      </div>
-                      <p className="text-gray-400 text-sm">Your Portrait Here</p>
-                    </div>
+                {/* Floating Bubbles */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-purple-500/80 rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-500/80 rounded-full animate-pulse"></div>
+
+                {/* Portrait with floating effect */}
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    repeatType: "mirror",
+                    ease: "easeInOut",
+                  }}
+                >
+                  <div className="w-80 h-96 lg:w-96 lg:h-[400px] rounded-2xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-white/10 overflow-hidden shadow-xl shadow-purple-900/20 hover:shadow-purple-500/40 transition-shadow duration-500">
+                    <img
+                      src={myPortrait}
+                      alt="Sejal Portrait"
+                      className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10"></div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+
+            {/* Scroll Indicator - Centered at bottom */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+              <button 
+                onClick={scrollToSection}
+                className="group animate-bounce hover:animate-none transition-all duration-300"
+              >
+                <div className="flex flex-col items-center text-gray-500 hover:text-purple-400">
+                  <span className="text-sm mb-2 opacity-70">Scroll to explore</span>
+                  <div className="p-2 rounded-full border border-gray-600/30 group-hover:border-purple-400/50 transition-colors duration-300">
+                    <ChevronDown size={20} />
                   </div>
                 </div>
-                
-                {/* Glow Effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/30 to-pink-500/30 blur-xl opacity-50 -z-10"></div>
-                
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-purple-500/80 rounded-full animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-500/80 rounded-full animate-pulse delay-1000"></div>
-              </div>
+              </button>
             </div>
-          </div>
-
-          {/* Scroll Indicator - Centered at bottom */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            <button 
-              onClick={scrollToSection}
-              className="group animate-bounce hover:animate-none transition-all duration-300"
-            >
-              <div className="flex flex-col items-center text-gray-500 hover:text-purple-400">
-                <span className="text-sm mb-2 opacity-70">Scroll to explore</span>
-                <div className="p-2 rounded-full border border-gray-600/30 group-hover:border-purple-400/50 transition-colors duration-300">
-                  <ChevronDown size={20} />
-                </div>
-              </div>
-            </button>
           </div>
         </div>
       </div>

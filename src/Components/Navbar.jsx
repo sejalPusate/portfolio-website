@@ -1,28 +1,28 @@
 import { useEffect, useState } from "react";
+import { useTheme } from "../context/ThemeContext"; // <-- Import Theme Context
+import { Sun, Moon } from "lucide-react";
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const { theme, toggleTheme } = useTheme(); // <-- Access theme + toggle
 
   const navItems = [
     { name: "Home", path: "#home" },
     { name: "About", path: "#about" },
     { name: "Projects", path: "#projects" },
     { name: "Experience", path: "#experience" },
-    { name: "Contact Me", path: "#contact" },
+    { name: "Contact", path: "#contact" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY < 50) {
-        // Always show navbar when near the top
         setIsVisible(true);
       } else if (window.scrollY > lastScrollY) {
-        // Scrolling down → hide navbar
         setIsVisible(false);
       } else {
-        // Scrolling up → show navbar
         setIsVisible(true);
       }
       setLastScrollY(window.scrollY);
@@ -33,24 +33,37 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   return (
-    <nav
-      className={`bg-white/10 backdrop-blur-md border-b border-white/20 text-white px-8 py-0.5 shadow-md fixed top-0 w-full z-50 transition-transform duration-300 ${
-        isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
-      }`}
-    >
-      <div className="flex items-center justify-between">
-        {/* Logo */}
-        <div className="w-12 h-12 bg-white flex items-center justify-center rounded">
-          <img src={logo} alt="Logo" className="w-10 h-10 object-contain" />
+    <>
+      {/* Logo stays outside navbar */}
+      <a
+        href="#home"
+        className="fixed top-4 left-6 z-[60] flex items-center gap-2"
+      >
+        <div className="w-23 h-23 flex items-center justify-center rounded-full">
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-16 h-16 object-contain dark:invert-0 invert"
+          />
         </div>
+      </a>
 
-        {/* Nav Links */}
-        <ul className="flex justify-center space-x-10">
+      {/* Floating Curved Navbar */}
+      <nav
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 
+        bg-black/30 dark:bg-white/10 backdrop-blur-xl rounded-full 
+        border border-white/10 shadow-lg px-10 py-3 
+        transition-transform duration-300 ${
+          isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+        }`}
+      >
+        <ul className="flex items-center justify-center space-x-10">
           {navItems.map((item) => (
             <li key={item.name} className="relative group">
               <a
                 href={item.path}
-                className="relative pb-1 text-xl font-medium transition-colors duration-300 text-gray-300 hover:text-purple-400"
+                className="relative pb-1 text-lg font-medium transition-colors duration-300 
+                  text-gray-300 hover:text-purple-400 dark:text-gray-200 dark:hover:text-purple-300"
               >
                 {item.name}
                 {/* underline effect */}
@@ -58,8 +71,23 @@ export default function Navbar() {
               </a>
             </li>
           ))}
+
+          {/* Dark/Light Toggle Button */}
+          <li>
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full transition-all hover:bg-white/10 dark:hover:bg-black/20"
+              aria-label="Toggle Dark Mode"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-5 h-5 text-yellow-400 transition-transform duration-300 hover:rotate-12" />
+              ) : (
+                <Moon className="w-5 h-5 text-gray-300 transition-transform duration-300 hover:rotate-12" />
+              )}
+            </button>
+          </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }

@@ -78,9 +78,17 @@ const ScrollTimeline = () => {
           <h1 className="text-5xl font-bold mb-4">Experience That</h1>
           <h2 className="text-5xl font-bold">
             Brings{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent italic font-light">
-              Ideas to Life
-            </span>
+            <span className="
+                bg-gradient-to-r 
+                from-purple-700 to-pink-600 
+                dark:from-purple-400 dark:to-pink-400 
+                bg-clip-text 
+                text-transparent 
+                italic 
+                font-light
+              ">
+                Ideas to Life
+              </span>
           </h2>
         </div>
 

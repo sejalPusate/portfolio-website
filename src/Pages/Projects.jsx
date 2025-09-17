@@ -29,6 +29,14 @@ export default function Projects() {
     },
     {
       id: 3,
+      title: "AI Website Summarizer Extension",
+      description:
+        "A chrome extension that uses AI to summarize the content of any webpage, providing users with quick insights and key points.",
+      image: "src/assets/ai-landing.png",
+      github: "https://github.com/sejalPusate/AI-Website-Summarizer-Extension",
+    },
+    {
+      id: 4,
       title: "Pallavi Academy",
       description:
         "A comprehensive educational platform for Pallavi Academy, featuring course listings, enrollment, and student resources.",
@@ -42,9 +50,18 @@ export default function Projects() {
       {/* Header */}
       <header className="text-center mb-14">
         <h1 className="text-5xl font-bold mb-3 text-white-400 drop-shadow-lg">
-          Curated <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent italic font-light">
-                  work
-                  </span>
+          Curated <span className="
+                          bg-gradient-to-r 
+                          from-purple-700 to-pink-600 
+                          dark:from-purple-400 dark:to-pink-400 
+                          bg-clip-text 
+                          text-transparent 
+                          italic 
+                          font-light
+                        ">
+                          work
+                        </span>
+
         </h1>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
           Explore my journey through projects, certifications, and technical

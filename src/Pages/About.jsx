@@ -21,9 +21,19 @@ export default function AboutPage() {
               <h1 className="text-2xl lg:text-3xl font-bold leading-tight mb-4">
                 I'm Sejal, a <br />
                 creative{' '}
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent italic font-light">
+                <span className="
+                  bg-gradient-to-r 
+                  from-purple-500 to-pink-500 
+                  dark:from-purple-300 dark:to-pink-300
+                  bg-clip-text 
+                  text-transparent 
+                  italic 
+                  font-light
+                ">
                   engineer
                 </span>
+
+
               </h1>
             </div>
 

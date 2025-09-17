@@ -6,6 +6,7 @@ const ContactPage = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [showForm, setShowForm] = useState(false); // Add this state
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -19,6 +20,16 @@ const ContactPage = () => {
     
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
+
+  // Function to handle button click
+  const handleContactClick = () => {
+    setShowForm(true);
+  };
+
+  // Function to close form
+  const handleCloseForm = () => {
+    setShowForm(false);
+  };
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -132,11 +143,12 @@ const ContactPage = () => {
             </div>
           </div>
 
-          {/* Enhanced CTA Button */}
+          {/* Enhanced CTA Button - Updated with onClick */}
           <div className={`mb-8 transition-all duration-1000 delay-1500 ${
             isVisible ? 'transform translate-y-0 opacity-100' : 'transform translate-y-10 opacity-0'
           }`}>
             <button
+              onClick={handleContactClick}
               className="group relative px-6 py-2.5 bg-gradient-to-r from-[#1a1a3a] to-[#2a2a4a] hover:from-[#2a2a4a] hover:to-[#3a3a5a] text-white font-bold text-base rounded-full border-2 border-transparent bg-clip-padding shadow-2xl transition-all duration-500 hover:shadow-blue-500/50 hover:scale-105"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
@@ -180,36 +192,39 @@ const ContactPage = () => {
       </div>
 
       {/* Enhanced Footer */}
-      <div className="absolute bottom-0 left-0 right-0 p-0.5 backdrop-blur-sm bg-black/20">
+      <div className="bottom-0 left-0 right-0 p-0.5 backdrop-blur-sm bg-black/20 z-50">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           
           {/* Enhanced Copyright */}
           <div className="text-gray-400 text-sm">
-            Copyright © 2025{''} | All rights reserved by {'Sejal Pusate '}
+            Copyright © 2025 | All rights reserved by {'Sejal Pusate '}
           </div>
 
-          {/* Enhanced Social Icons */}
+          {/* Enhanced Social Buttons */}
           <div className="flex space-x-4">
             {[
-              { icon: Github, href: "#" },
-              { icon: Twitter, href: "#" },
-              { icon: Linkedin, href: "#" },
-              { icon: Instagram, href: "#" }
+              { icon: Github, href: "https://github.com/sejalPusate" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/sejalpusate/" },
+              { icon: Instagram, href: "https://www.instagram.com/sejal.pusate22" }
             ].map((social, index) => (
-              <a 
+              <button
                 key={index}
-                href={social.href} 
-                className="relative group text-gray-400 hover:text-white transition-all duration-300 p-3 rounded-full hover:bg-white/10 hover:scale-110"
+                type="button"
+                onClick={() => window.open(social.href, "_blank", "noopener,noreferrer")}
+                className="relative group text-gray-400 hover:text-white transition-all duration-300 p-3 rounded-full hover:bg-white/10 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-400"
               >
                 <social.icon className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </a>
+              </button>
             ))}
           </div>
         </div>
       </div>
 
-      
+      {/* Form Modal - Add this */}
+      {showForm && (
+        <Form onClose={handleCloseForm} />
+      )}
 
       {/* Additional ambient effects */}
       <div className="fixed inset-0 pointer-events-none z-0">
