@@ -5,7 +5,10 @@ import { Github } from "lucide-react";
 import Certificates from "./Certificates";
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub, FaJava, FaPython } from "react-icons/fa";
 import { SiExpress, SiMongodb, SiTailwindcss, SiPostman, SiPhp, SiWordpress, SiAndroidstudio, SiOpencv, SiScikitlearn, SiOpenai, SiHuggingface, SiReactrouter, SiFramer, SiFigma } from "react-icons/si";
-
+import screenshotLanding from "../assets/screenshotLanding.png";
+import zomatoLanding from "../assets/zomatoLanding.jpg";
+import aiLanding from "../assets/aiLanding.png";
+import pallaviLanding from "../assets/pallaviLanding.png";
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState("projects");
@@ -16,7 +19,7 @@ export default function Projects() {
       title: "ResumeAI",
       description:
         "ResumeAI is an AI-powered resume builder that helps you create a professional resume in minutes.",
-      image: "src/assets/screenshot-landing.png",
+      image: screenshotLanding,
       github: "https://github.com/sejalPusate/AI-based-Resume-and-Cover-letter-Builder",
     },
     {
@@ -24,7 +27,7 @@ export default function Projects() {
       title: "Zomato Clone",
       description:
         "A full-stack food delivery application that mimics Zomato's core features, including restaurant browsing, menu viewing, and order placement.",
-      image: "src/assets/zomato-landing.jpg",
+      image: zomatoLanding,
       github: "https://github.com/sejalPusate/zomato-clone",
     },
     {
@@ -32,7 +35,7 @@ export default function Projects() {
       title: "AI Website Summarizer Extension",
       description:
         "A chrome extension that uses AI to summarize the content of any webpage, providing users with quick insights and key points.",
-      image: "src/assets/ai-landing.png",
+      image: aiLanding,
       github: "https://github.com/sejalPusate/AI-Website-Summarizer-Extension",
     },
     {
@@ -40,7 +43,7 @@ export default function Projects() {
       title: "Pallavi Academy",
       description:
         "A comprehensive educational platform for Pallavi Academy, featuring course listings, enrollment, and student resources.",
-      image: "src/assets/pallavi-landing.png",
+      image: pallaviLanding,
       github: "https://your-live-demo-link.com",
     },
   ];
