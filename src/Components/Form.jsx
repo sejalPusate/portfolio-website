@@ -15,11 +15,15 @@ export default function Form({ onClose }) {
     setStatus("sending");
 
     try {
+      const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
       await emailjs.send(
-        "service_fondr7s",    // Replace with EmailJS Service ID
-        "template_ne4o45q",   // Replace with EmailJS Template ID
+        SERVICE_ID,    // Replace with EmailJS Service ID
+        TEMPLATE_ID,   // Replace with EmailJS Template ID
         formData,
-        "-nNYvnRk31aZs15D7"     // Replace with EmailJS Public Key
+        PUBLIC_KEY     // Replace with EmailJS Public Key
       );
 
       setStatus("success");
